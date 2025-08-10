@@ -23,6 +23,14 @@ module.exports = {
 }
 ```
 
+CommonJS config (explicit `.cjs`) also works:
+
+```js
+// postcss.config.cjs
+const { renameTwVars } = require('postcss-rename-tw-vars')
+module.exports = { plugins: [renameTwVars({ prefix: '--tw-scope-' })] }
+```
+
 ### Options
 
 All options are optional.

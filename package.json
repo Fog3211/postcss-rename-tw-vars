@@ -14,12 +14,12 @@
   "license": "MIT",
   "type": "commonjs",
   "main": "dist/index.cjs.js",
-  "module": "dist/index.esm.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "require": "./dist/index.cjs.js",
-      "default": "./dist/index.esm.js",
+      "default": "./dist/index.mjs",
       "types": "./dist/index.d.ts"
     }
   },
@@ -29,7 +29,7 @@
   ],
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "tsup src/index.ts --format esm,cjs --dts --sourcemap --clean",
+    "build": "tsup src/index.ts --format esm,cjs --dts --sourcemap --clean && node scripts/postbuild.cjs",
     "dev": "tsup src/index.ts --format esm,cjs --dts --sourcemap --watch",
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "test": "vitest run",
