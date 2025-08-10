@@ -7,7 +7,7 @@
  */
 
 import type { AtRule, Declaration, Plugin, PluginCreator, Root } from 'postcss'
-import postcss from 'postcss'
+// PostCSS types are imported above; no runtime import required
 import valueParser, { FunctionNode, Node as ValueNode, WordNode } from 'postcss-value-parser'
 
 // ---------- Types
@@ -215,12 +215,6 @@ const creator: PluginCreator<RenameTwVarsOptions> = (options: RenameTwVarsOption
 })
 creator.postcss = true as const
 export const renameTwVars = creator
-
-// v7 wrapper for older hosts (kept minimal, same transform logic)
-export const plugin = (options: RenameTwVarsOptions = {}): unknown =>
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-  (postcss as unknown as { plugin: (name: string, fn: () => (root: Root) => void) => unknown })
-    .plugin('postcss-rename-tw-vars', () => createTransformer(options))
 
 export default renameTwVars
 

@@ -10,7 +10,7 @@
     "css-variables",
     "plugin"
   ],
-  "author": "",
+  "author": "Fog3211",
   "license": "MIT",
   "type": "commonjs",
   "main": "dist/index.cjs.js",
