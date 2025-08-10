@@ -85,5 +85,18 @@ renameTwVars({
 - PostCSS v8 (peer: `postcss >=7 <9` — typical modern setups are v8)
 - Node.js >= 16 recommended
 
+### Release (maintainers)
+
+```bash
+# bump version first
+pnpm run version:patch   # or version:minor / version:major
+
+# verify & dry-run
+pnpm run release:dry
+
+# publish
+pnpm run release
+```
+
 
 

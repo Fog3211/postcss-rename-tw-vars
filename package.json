@@ -32,8 +32,15 @@
     "dev": "tsup src/index.ts --format esm,cjs --dts --sourcemap --watch",
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "test": "vitest run",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "pnpm run build",
+    "release": "pnpm run test && pnpm run build && pnpm publish --access public",
+    "release:dry": "pnpm run test && pnpm run build && pnpm publish --access public --dry-run",
+    "version:patch": "pnpm version patch",
+    "version:minor": "pnpm version minor",
+    "version:major": "pnpm version major"
   },
+  "publishConfig": { "access": "public" },
   "peerDependencies": {
     "postcss": ">=7 <9"
   },
