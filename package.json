@@ -1,0 +1,57 @@
+{
+  "name": "postcss-rename-tw-vars",
+  "version": "1.0.0",
+  "private": false,
+  "description": "PostCSS plugin to rename Tailwind CSS custom properties (e.g. --tw-*) with a configurable prefix.",
+  "keywords": [
+    "postcss",
+    "tailwind",
+    "custom-properties",
+    "css-variables",
+    "plugin"
+  ],
+  "author": "",
+  "license": "MIT",
+  "type": "commonjs",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs.js",
+      "default": "./dist/index.esm.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "tsup src/index.ts --format esm,cjs --dts --sourcemap --clean",
+    "dev": "tsup src/index.ts --format esm,cjs --dts --sourcemap --watch",
+    "lint": "eslint \"src/**/*.{ts,tsx}\"",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "postcss": ">=7 <9"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "eslint": "^9.7.0",
+    "eslint-config-standard-with-typescript": "^43.0.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^17.8.1",
+    "eslint-plugin-promise": "^6.2.0",
+    "postcss": "^8.4.47",
+    "postcss-value-parser": "^4.2.0",
+    "rimraf": "^5.0.5",
+    "tsup": "^8.1.0",
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.5"
+  }
+}
+
+

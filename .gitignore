@@ -1,0 +1,10 @@
+SPEC.local.md
+node_modules/
+dist/
+coverage/
+*.log
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+.DS_Store
+
